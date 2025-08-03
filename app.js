@@ -20,6 +20,7 @@ const userRouter = require("./routes/user.js");
 
 // const MONG0_URL= "mongodb://127.0.0.1:27017/wanderlust";
 const dbUrl= process.env.ATLASDB_URL;
+const PORT= 8080;
 
 async function main() {
   await mongoose.connect(dbUrl);
@@ -63,10 +64,6 @@ const sessionOptions={
     }
 }
 
-// app.get("/", (req,res) =>{
-//     res.send("I am root");
-// });
-//falsh session
 
 app.use(session(sessionOptions));
 app.use(flash());
@@ -100,6 +97,6 @@ app.use((err, req, res, next) => {
 //   res.status(statusCode).send(message);
 });
 
-app.listen(8080, () =>{
+app.listen(PORT, () =>{
     console.log("Server is listening");
 });
