@@ -24,7 +24,7 @@ const PORT= 8080;
 async function main() {
   await mongoose.connect(dbUrl, {
     tls: true,                     // Enable TLS/SSL
-    tlsAllowInvalidCertificates: true,  // Change to true only for testing if SSL errors persist
+    tlsAllowInvalidCertificates: false,  // Change to true only for testing if SSL errors persist
   });
 }
 
