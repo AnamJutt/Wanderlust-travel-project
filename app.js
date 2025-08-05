@@ -63,7 +63,6 @@ const sessionOptions={
     }
 }
 
-
 app.use(session(sessionOptions));
 app.use(flash());
 
