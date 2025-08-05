@@ -78,13 +78,11 @@ passport.deserializeUser(User.deserializeUser()); //to get user from session
 
 //flash middleware
 app.use((req, res, next) => {
-    res.locals.success = req.flash("success");
-    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success") || [];
+    res.locals.error = req.flash("error") || [];
     res.locals.currUser = req.user; //to access current user in all views
     next(); 
 });
-
-
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
