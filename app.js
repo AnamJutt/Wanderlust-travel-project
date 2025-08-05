@@ -26,7 +26,7 @@ async function main() {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     tls: true,                     // Enable TLS/SSL
-    tlsAllowInvalidCertificates: false,  // Change to true only for testing if SSL errors persist
+    tlsAllowInvalidCertificates: true,  // Change to true only for testing if SSL errors persist
   });
 }
 
